@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>True-Low Friday — Black Friday Deal Finder</title>
+<meta name="description" content="76 Black Friday deals checked on 27 Nov 2026, each with its store, sale price, usual price and an honest verdict: true low, strong price or routine sale.">
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<header class="masthead">
+  <div class="masthead-inner">
+    <p class="kicker">Black Friday &middot; 27&ndash;30 Nov 2026</p>
+    <h1>True-Low Friday</h1>
+    <p class="tagline">Not every sale is a deal. We checked <strong id="dealCount">75</strong> live prices and marked each one honestly: a <span class="badge badge-true-low">true low</span> is the lowest price ever reported, a <span class="badge badge-strong">strong price</span> is a big cut near the recent low, and a <span class="badge badge-routine">routine sale</span> is a small cut &mdash; or a cut against an inflated reference price.</p>
+    <p class="sweep-line">Prices re-checked <strong id="sweepTime">27 Nov 2026, 16:00 WIB</strong> &middot; Prices move through the day &mdash; check the price at checkout.</p>
+  </div>
+</header>
+
+<main>
+  <section class="stats" id="stats" aria-label="Sweep summary"></section>
+
+  <section class="compare" aria-label="Same product, several stores">
+    <h2>Same product, several stores</h2>
+    <p class="section-note">Four headline products, priced at every store that lists them. The cheapest verified price is marked.</p>
+    <div id="compareTable"></div>
+  </section>
+
+  <section class="toolbar" aria-label="Find a deal">
+    <div class="toolbar-row">
+      <label class="search-box">
+        <span class="visually-hidden">Search deals</span>
+        <input id="searchInput" type="search" placeholder="Search a product, brand or store&hellip;" autocomplete="off">
+      </label>
+      <label>Category
+        <select id="categorySelect"></select>
+      </label>
+      <label>Store
+        <select id="storeSelect"></select>
+      </label>
+      <label>Min. discount
+        <select id="discountSelect">
+          <option value="0">Any discount</option>
+          <option value="20">20% off or more</option>
+          <option value="30">30% off or more</option>
+          <option value="40">40% off or more</option>
+          <option value="50">50% off or more</option>
+        </select>
+      </label>
+      <label>Sort by
+        <select id="sortSelect">
+          <option value="verdict">True lows first</option>
+          <option value="discount">Biggest discount</option>
+          <option value="price-asc">Lowest price</option>
+          <option value="price-desc">Highest price</option>
+          <option value="name">Name A&ndash;Z</option>
+        </select>
+      </label>
+    </div>
+    <div class="chips" id="verdictChips" role="group" aria-label="Filter by verdict">
+      <button type="button" data-verdict="all" class="chip active">All deals</button>
+      <button type="button" data-verdict="true-low" class="chip">True lows only</button>
+      <button type="button" data-verdict="strong" class="chip">Strong prices</button>
+      <button type="button" data-verdict="routine" class="chip">Routine sales</button>
+    </div>
+    <p class="result-count" id="resultCount" aria-live="polite"></p>
+  </section>
+
+  <section class="deals" id="dealGrid" aria-label="Deals"></section>
+  <p class="empty-note" id="emptyNote" hidden>No deals match that search. Try a different word, category or store.</p>
+
+  <section class="method" aria-label="How we verify">
+    <h2>How a deal earns its badge</h2>
+    <ol>
+      <li><strong>Found, not invented.</strong> Every product, price and store link below was read from the store or from a deals source that names the store, on 27 Nov 2026. Nothing here is a guess.</li>
+      <li><strong>True low.</strong> The sale price is the lowest ever reported for that item &mdash; below every earlier sale we could find, including Prime Day and last Black Friday.</li>
+      <li><strong>Strong price.</strong> A cut of roughly a quarter or more against the usual price, at or near the item's recent low. Worth buying if you want it.</li>
+      <li><strong>Routine sale.</strong> A small cut, or a big percentage measured against a reference price the item rarely sold at. The badge says so instead of dressing it up.</li>
+      <li><strong>Checked, then dated.</strong> Each card names its source and the sweep time. A price from this morning can be gone by tonight &mdash; that is why the check time is on every card.</li>
+    </ol>
+  </section>
+</main>
+
+<footer>
+  <p>True-Low Friday is an independent deal finder built for Black Friday 2026. Store names belong to their owners; prices were read from the stores and the deals sources named on each card on 27 Nov 2026 and can change or sell out. Always confirm the price at checkout.</p>
+</footer>
+
+<script type="module" src="./main.js"></script>
+</body>
+</html>
